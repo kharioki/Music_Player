@@ -6,7 +6,7 @@ import Icon2 from 'react-native-vector-icons/Ionicons';
 
 import Home from '../screens/Home';
 import Discover from '../screens/Discover';
-import Profile from '../screens/Profile';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -52,7 +52,7 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({focused, color}) => (
             <Icon
