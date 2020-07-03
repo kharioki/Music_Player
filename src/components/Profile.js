@@ -15,7 +15,7 @@ export default function Profile() {
         <View style={styles.left}>
           <Text style={styles.title}>{count}</Text>
           <Icon2
-            name="ios-arrow-forward"
+            name="ios-chevron-forward"
             size={30}
             color="gray"
             style={{marginLeft: 20}}
@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
   },
   left: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
   title: {
     fontSize: 20,

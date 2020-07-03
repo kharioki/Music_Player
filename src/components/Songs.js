@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const {width, height} = Dimensions.get('window');
 
-export default Songs = () => {
+export default Songs = ({navigation}) => {
   let songs = [
     {
       title: 'Believer',
@@ -47,6 +47,10 @@ export default Songs = () => {
     },
   ];
 
+  const playSong = item => {
+    navigation.navigate('Player', {item: item});
+  };
+
   const separator = () => {
     return <View style={{height: 10, backgroundColor: '#fff'}} />;
   };
@@ -60,7 +64,9 @@ export default Songs = () => {
           ItemSeparatorComponent={() => separator()}
           renderItem={({item, index}) => {
             return (
-              <TouchableWithoutFeedback style={styles.songContainer}>
+              <TouchableWithoutFeedback
+                style={styles.songContainer}
+                onPress={() => playSong(item)}>
                 <View style={{flexDirection: 'row'}}>
                   <Image source={item.img} style={styles.img} />
                   <View style={styles.dataContainer}>

@@ -19,6 +19,8 @@ import Icon2 from 'react-native-vector-icons/Ionicons';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import Tabs from './src/config/router';
+import PlayerScreen from './src/screens/PlayerScreen';
+import Categories from './src/components/Categories';
 
 const Stack = createStackNavigator();
 
@@ -51,6 +53,20 @@ function Stacks() {
       <Stack.Screen
         name="Tabs"
         component={Tabs}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Player"
+        component={PlayerScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Details"
+        component={Categories}
         options={{
           headerShown: false,
         }}

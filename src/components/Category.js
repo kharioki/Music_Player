@@ -13,7 +13,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const {width, height} = Dimensions.get('window');
 
-export default Category = props => {
+export default Category = ({navigation}) => {
   let categories = [
     {
       name: 'Rock',
@@ -24,7 +24,7 @@ export default Category = props => {
       img: require('../assets/c2.jpg'),
     },
     {
-      name: 'Rock',
+      name: 'House',
       img: require('../assets/c3.jpg'),
     },
     {
@@ -36,6 +36,11 @@ export default Category = props => {
       img: require('../assets/c5.jpg'),
     },
   ];
+
+  goToDetails = item => {
+    navigation.navigate('Details', {item: item});
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Category</Text>
@@ -46,7 +51,7 @@ export default Category = props => {
         showsHorizontalScrollIndicator={false}
         renderItem={({item, index}) => {
           return (
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => goToDetails(item)}>
               <Surface style={styles.surfaceItem}>
                 <ImageBackground
                   source={item.img}
