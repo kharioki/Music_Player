@@ -117,8 +117,6 @@ const styles = StyleSheet.create({
     height: 60,
     padding: 10,
     paddingTop: 0,
-    // borderTopWidth: 0.5,
-    // borderTopColor: 'gray',
     justifyContent: 'space-between',
     flexDirection: 'row',
   },

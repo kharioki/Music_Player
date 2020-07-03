@@ -28,11 +28,27 @@ const App = ({navigation}) => {
   const goToTabs = () => {
     navigation.navigate('Tabs');
   };
+
+  const zoomIn = {
+    0: {
+      scale: 0,
+    },
+    0.5: {
+      scale: 0.5,
+    },
+    1: {
+      scale: 1,
+    },
+  };
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <Text style={styles.title}>Music app</Text>
-      <Image source={require('./src/assets/logoImg.png')} style={styles.logo} />
+      <Animatable.Image
+        animation={zoomIn}
+        source={require('./src/assets/logoImg.png')}
+        style={styles.logo}
+      />
       <TouchableOpacity style={styles.btn} onPress={() => goToTabs()}>
         <Text style={styles.text}>Start Listening</Text>
       </TouchableOpacity>
